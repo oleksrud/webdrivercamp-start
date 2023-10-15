@@ -1,0 +1,129 @@
+Answer for questions
+
+0  0 - What is the command to open a file from within Emacs?
+1 - To open a file in Emacs, you can use the C-x C-f command. This command creates a new buffer with the same name as the file. 
+To use the C-x C-f command, you can: 
+Hold down the Control key.
+Press x and f in succession.
+Type the name and path of the file you want to open in the minibuffer.
+Press Return.
+You can also open a file by specifying the filename when you start Emacs. 
+The C-x C-f command is also known as the find-file command. It's an interactive function that shows a list of files in the current directory. 
+
+
+1  0 - What is the command to save a file?
+1 - To save a file in Emacs, type C-x C-s or select Save Buffer from the Files menu. 
+You can also use these commands: 
+C-x s: Saves all modified buffers
+C-x C-w: Marks the buffer as visiting a different file and saves it
+Control-X-Control-W: Writes the contents of the buffer to a different file
+Emacs will overwrite the old version of the file. It will also display the message Wrote filename in the minibuffer to let you know that the file was saved correctly.
+
+
+2  0 - What is the command to cut an entire line?
+1 - In Emacs, you can cut an entire line using the following commands: 
+C-SHIFT-DEL
+C-k
+C-S-backspace
+The C-k command kills all the text on a line, leaving it blank. If used on a blank line, it kills the whole line including its newline. To kill an entire non-blank line, go to the beginning and type C-k twice. 
+The C-S-backspace command cuts the whole line including the newline, regardless of where the cursor is. However, many text terminals will prevent you from typing the key sequence C-S-backspace. 
+The lines that you deleted are in your clipboard (kill-ring in emacs terminology) and can be pasted elsewhere (yanked in emacs terminology).
+
+
+3  0 - What is the command to paste?
+
+1 - In Emacs, you can paste text by pressing C-y. 
+
+
+4  0 - What is the command to search forward?
+
+1 - In Emacs, the command to search forward is C-s.
+
+
+5  0 - What is the command to undo?
+1 - The undo command reverses recent changes in the buffer’s text. Each buffer records changes individually, and the undo command always applies to the current buffer. You can undo all the changes in a buffer for as far back as the buffer’s records go. Usually, each editing command makes a separate entry in the undo records, but some commands such as query-replace divide their changes into multiple entries for flexibility in undoing. Consecutive character insertion commands are usually grouped together into a single undo record, to make undoing less tedious.
+C-/
+C-x u
+C-_
+Undo one entry in the current buffer’s undo records (undo).
+To begin to undo, type C-/ (or its aliases, C-_ or C-x u)6. This undoes the most recent change in the buffer and moves the point back to where it was before that change. Consecutive repetitions of C-/ (or its aliases) undo earlier and earlier changes in the current buffer. If all the recorded changes have already been undone, the undo command signals an error.
+
+6  0 - What is the command to quit Emacs?
+
+1 - C-x C-c
+Kill Emacs (save-buffers-kill-terminal).
+
+C-z
+On a text terminal, suspend Emacs; on a graphical display, iconify (or “minimize”) the selected frame (suspend-frame).
+
+Killing Emacs means terminating the Emacs program. To do this, type C-x C-c (save-buffers-kill-terminal). A two-character key sequence is used to make it harder to type by accident. If there are any modified file-visiting buffers when you type C-x C-c, Emacs first offers to save these buffers. If you do not save them all, it asks for confirmation again, since the unsaved changes will be lost. Emacs also asks for confirmation if any subprocesses are still running, since killing Emacs will also kill the subprocesses (see Running Shell Commands from Emacs).
+
+C-x C-c behaves especially if you are using Emacs as a server. If you type it from a client frame, it closes the client connection. See Using Emacs as a Server.
+
+
+7  0 - What is the command to insert text before the cursor?
+1 - In Emacs, you can insert text before the cursor by using the command M-.. You can use this command at any time in the minibuffer. 
+You can also insert text in Emacs by: 
+Using C-q followed by any non-graphic character
+Using C-q followed by a sequence of octal digits
+Typing Control-X-I to insert the contents of another file into the current buffer.
+You can also insert text in Emacs by: 
+Typing i from command mode
+Typing I to insert text at the beginning of a line
+Typing M-< M-x replace-regexp RET ^ RET > RET to insert > at the beginning of every line in an entire buffer
+
+
+8  0 - What is the command to delete and cut the current line?
+1 - To delete a line in vi, you can use the command dd. To do this, you can: 
+Switch to normal mode
+Position the cursor anywhere on the line
+Type dd
+You can also use the following commands to delete lines in vi: 
+5dd deletes multiple (5) lines, starting at the cursor
+d$ deletes to the end of the line, starting at the cursor
+dG deletes all lines starting from the line under the cursor
+If you delete by mistake, you can use the command u (undo) immediately after you give the delete command. 
+
+
+9  0 - What is the command to paste the lines in the buffer into the text after      
+   the current line?
+1 - To paste the lines in the buffer into the text after the current line in vi, you can type p. You can also use P to paste the lines before the current line. 
+To paste the lines, you can do the following: 
+Move the cursor
+ to where you want to paste the selection.
+Press p (lowercase) to paste after the cursor.
+Press P (uppercase) to paste before the cursor.
+You can also use yy or Y to copy the line. To delete the line, you can use dd. 
+
+
+10 0 - What is the command to undo what you just did?
+1 - In the vi text editor, you can undo your last command by pressing u immediately after the command. You can also undo the last two changes by typing 2u. 
+To undo in vi, you can: 
+Press u immediately after the command.
+Press Ctrl-r to redo changes that were undone.
+Press Esc to go back to the normal mode.
+
+
+11 0 - What is the command to quit vi even though latest changes have not been 
+   saved for this vi call?
+1 - To quit vi without saving changes, you can: 
+Press the Esc key a few times to enter Command mode.
+Type :q! and press Enter.
+You can also use the keyboard shortcut ZZ to write and quit. 
+If you want to save your changes, you can type :wq. 
+12 0 - What is the command to move the cursor to the start of the current line?
+1 - To move the cursor to the start of the current line in vi, you can: 
+Make sure you're in Normal mode. You can check by pressing the Esc key.
+Press ^ or 0 (zero).
+You can also move the cursor to the first non-blank character of a line by pressing ^. 
+
+
+13 0 - What is the command to move the cursor to the start of the current line
+1 - In vi, you can move the cursor to the end of the line by pressing the $ key. You can enter normal mode in vim by pressing the ESC key. 
+Here are some other vi commands: 
+^: Move the cursor to the start of the current line
+A: Enter insert mode at the end of a line
+d$: Delete the text from the cursor to the end of the line
+ddp: Move a line down;
+ddkP: Move a line-up.
+
